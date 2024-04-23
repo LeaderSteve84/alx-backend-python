@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Module that async routine that returns
-the list of all the delays.
+a float.
 """
 
 
 import asyncio
+import time
 from typing import List
 from random import uniform
 from asyncio import as_completed
@@ -44,3 +45,21 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
         delay = await task
         delays.append(delay)
     return delays
+
+def measure_time(n: int, max_delay: int) -> float:
+    """
+    Measure the total execution time for wait_n(n, max_delay),
+    and return total_time / n.
+
+    Args:
+        n (int): The number of times to spawn wait_random.
+        max_delay (int): The maximum delay.
+
+    Returns:
+        float: The average time of execution.
+    """
+    start_time = time.time()
+    asyncio.run(wait_n(n, max_delay))
+    end_time = time.time()
+    total_time = end_time - start_time
+    return total_time / n
