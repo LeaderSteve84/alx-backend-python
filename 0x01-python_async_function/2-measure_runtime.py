@@ -46,6 +46,7 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
         delays.append(delay)
     return delays
 
+
 def measure_time(n: int, max_delay: int) -> float:
     """
     Measure the total execution time for wait_n(n, max_delay),
