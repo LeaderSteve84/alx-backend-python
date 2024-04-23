@@ -25,7 +25,7 @@ async def wait_random(max_delay: int = 10) -> float:
     return delay
 
 
-def task_wait_random(max_delay: int) -> Callable:
+def task_wait_random(max_delay: int) -> asyncio.Task:
     """
     Returns a asyncio.Task object.
     Args:
