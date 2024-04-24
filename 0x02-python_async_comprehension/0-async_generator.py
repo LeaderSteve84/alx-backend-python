@@ -8,7 +8,7 @@ import asyncio
 import random
 
 
-async def async_generator():
+async def async_generator() -> None:
     """Coroutine that yields a random number between 0 and 10
     every second for 10 seconds.
     """
