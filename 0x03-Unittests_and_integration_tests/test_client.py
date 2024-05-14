@@ -21,8 +21,8 @@ class TestGithubOrgClient(unittest.TestCase):
         """
         method to test the Org request
         """
-        test_class = GithubOrgClient.org(organization)
-        test_class.org()
+        testClass = GithubOrgClient.org(organization)
+        testClass.org()
         mock.assert_called_once_with(
                 f"https://api.github.com/orgs/{organization}"
                 )
