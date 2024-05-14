@@ -41,6 +41,6 @@ class TestGetJson(unittest.TestCase):
     ])
     def test_get_json(self, test_url: str, test_payload: dict):
         """unittest for correct execution"""
-        with patch('requests.get') as mock_request:
-            mock_request.return_value.json.return_value = test_payload
+        with patch('requests.get') as mockRequest:
+            mockRequest.return_value.json.return_value = test_payload
             self.assertEqual(get_json(url=test_url), test_payload)
